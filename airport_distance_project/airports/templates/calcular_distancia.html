@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% load static %} 
+{% block title %}Calcular Distancias{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Calcular Distancia entre Aeropuertos</h1>
+    <p>Selecciona dos aeropuertos para calcular la distancia entre ellos.</p>
+    </div>
+    
+    <div class="text-center">
+        <div class="aeropuertos">
+            <form id = 'airportForm'> 
+                {% csrf_token %}
+
+                <label for = "aeropuerto_origen">Aeropuerto Origen:</label>
+                <input
+                    type = "text"
+                    id = "aeropuerto_origen"
+                    name = "aeropuerto_origen"
+                    placeholder = "Ej. BAQ"
+                    maxlength = "3"
+                    required
+                >
+
+                <br></br>
+
+                <label for = "aeropuerto_destino">Aeropuerto Destino:</label>
+                <input 
+                    type = "text"
+                    id = "aeropuerto_destino"
+                    name = "aeropuerto_destino"
+                    placeholder = "Ej. MEX"
+                    maxlength = "3"
+                    required
+                >
+
+                <br></br>
+
+                <button type = "submit" class = "btn btn-info"> Calcular la distancia</button>            
+            </form>
+        </div>
+        <div id="resultados" class="resultados">
+            <h2>Resultados:</h2>
+            <p><strong>Origen:</strong><span id="origen"></span></p>
+            <p><strong>Ciudad de origen:</strong><span id="c_origen"></span></p>
+            <p><strong>Pais de origen:</strong><span id="p_origen"></span></p>
+            <p><strong>Zona horaria:</strong><span id="zona_horaria1"></span></p>
+            <p><strong>Destino:</strong><span id="destino"></span></p>
+            <p><strong>Ciudad destino:</strong><span id="c_destino"></span></p>
+            <p><strong>Pais de destino:</strong><span id="p_destino"></span></p>
+            <p><strong>Zona horaria:</strong><span id="zona_horaria2"></span></p>
+            <p><strong>Distancia:</strong><span id="distancia"></span> km</p>
+        </div>
+        <div id="error" class="error"></div>
+    </div>
+
+
+{% endblock %}
+    {% block extra_scripts %}
+        <script src="{% static 'js/acciones.js' %}"></script>
+    {% endblock %}

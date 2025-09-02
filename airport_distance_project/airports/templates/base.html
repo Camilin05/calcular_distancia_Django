@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Aeropuertos{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos_bases.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos_calculador.css' %}">
+    
+    
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                
+                <a  href="{% url 'airports:inicio' %}">Aeropuertos</a>
+                    <a class="nav-link" href="{% url 'ayuda:ayuda'%}">Ayuda</a>
+                
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="text-center mt-4">
+        <p>&copy; 2025 Aeropuertos. Todos los derechos reservados.</p>
+        <p>Desarrollado por <a href="" target="_blank">Camilo Avila</a></p>
+    </footer>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

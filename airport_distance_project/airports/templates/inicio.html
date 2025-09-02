@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Inicio - Aeropuertos{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Bienvenido a la Aplicación de Aeropuertos</h1>
+    <p>Esta aplicación te permite explorar aeropuertos y calcular distancias entre ellos.</p>
+    
+</div>
+<button class="btn btn-info">
+        <a href="{% url 'airports:calcular_distancia' %}">Ir a calcular distancias</a>
+    </button>
+{% endblock %}  
