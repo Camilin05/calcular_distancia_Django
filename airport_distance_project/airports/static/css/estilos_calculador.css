@@ -129,8 +129,8 @@ button[type="submit"]:active {
     color: #333;
     font-weight: 600;
     min-width: 120px;
-    text-align: left;
-    width: 150px;
+    text-align: justify;
+    width: 30%;
 }
 
 .resultados span {
