@@ -56,15 +56,15 @@ def calcular_distancia_api(request):
                         'nombre': resultado['data']['attributes']['from_airport']['name'],
                         'ciudad': resultado['data']['attributes']['from_airport']['city'],
                         'pais':resultado['data']['attributes']['from_airport']['country'],
-                        'zona_horaria1':resultado['data']['attributes']['from_airport']['timezone'],
-                        'codigo': aeropuerto_origen
+                        'zona_horaria':resultado['data']['attributes']['from_airport']['timezone'],
+                        'codigo': aeropuerto_origen.upper()
                         },
                     'aeropuerto_destino': {
                         'nombre':resultado['data']['attributes']['to_airport']['name'],
                         'ciudad': resultado['data']['attributes']['to_airport']['city'],
                         'pais':resultado['data']['attributes']['to_airport']['country'],
-                        'zona_horaria2':resultado['data']['attributes']['to_airport']['timezone'],
-                        'codigo': aeropuerto_destino
+                        'zona_horaria':resultado['data']['attributes']['to_airport']['timezone'],
+                        'codigo': aeropuerto_destino.upper()
                         }
                 }
                 return JsonResponse(resultado_datos)
